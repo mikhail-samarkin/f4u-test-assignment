@@ -16,3 +16,27 @@ Requirements:
 - Use plain PHP (no frameworks).
 
 Fork your own copy of eglobal-it/f4u-test-assignment and share the result with us.
+
+### Тесты
+
+Для тестирования используется symfony/phpunit-bridge, для запуска используйте
+
+```
+php bin/phpunit
+```
+
+### Статический анализ
+
+Для статического анализа используется PHPStan, для запуска используйте
+
+```
+php vendor/bin/phpstan analyse -l 8 -c phpstan.neon src
+```
+
+### Единый code-style
+
+Для поддержки единого стиля используется PHP CodeSniffer && PHP Beautify and Fixer
+```
+php vendor/bin/phpcs src --standard=PSR12
+php vendor/bin/phpcbf src --standard=PSR12
+```
