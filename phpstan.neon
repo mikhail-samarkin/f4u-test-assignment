@@ -2,4 +2,6 @@ parameters:
     autoload_files:
         - vendor/autoload.php
     excludes_analyse:
+        - src/Infrastructure/Migrations/
     ignoreErrors:
+    checkGenericClassInNonGenericObjectType: false

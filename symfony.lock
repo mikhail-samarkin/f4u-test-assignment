@@ -1,4 +1,119 @@
 {
+    "beberlei/assert": {
+        "version": "v3.2.7"
+    },
+    "doctrine/annotations": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "a2759dd6123694c8d901d0ec80006e044c2e6457"
+        },
+        "files": [
+            "config/routes/annotations.yaml"
+        ]
+    },
+    "doctrine/cache": {
+        "version": "1.10.0"
+    },
+    "doctrine/collections": {
+        "version": "1.6.4"
+    },
+    "doctrine/common": {
+        "version": "2.12.0"
+    },
+    "doctrine/data-fixtures": {
+        "version": "1.4.2"
+    },
+    "doctrine/dbal": {
+        "version": "v2.10.1"
+    },
+    "doctrine/doctrine-bundle": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.0",
+            "ref": "a9f2463b9f73efe74482f831f03a204a41328555"
+        },
+        "files": [
+            "config/packages/doctrine.yaml",
+            "config/packages/prod/doctrine.yaml",
+            "src/Entity/.gitignore",
+            "src/Repository/.gitignore"
+        ]
+    },
+    "doctrine/doctrine-fixtures-bundle": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "fc52d86631a6dfd9fdf3381d0b7e3df2069e51b3"
+        },
+        "files": [
+            "src/DataFixtures/AppFixtures.php"
+        ]
+    },
+    "doctrine/doctrine-migrations-bundle": {
+        "version": "1.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.2",
+            "ref": "c1431086fec31f17fbcfe6d6d7e92059458facc1"
+        },
+        "files": [
+            "config/packages/doctrine_migrations.yaml",
+            "src/Migrations/.gitignore"
+        ]
+    },
+    "doctrine/event-manager": {
+        "version": "1.1.0"
+    },
+    "doctrine/inflector": {
+        "version": "1.3.1"
+    },
+    "doctrine/instantiator": {
+        "version": "1.3.0"
+    },
+    "doctrine/lexer": {
+        "version": "1.2.0"
+    },
+    "doctrine/migrations": {
+        "version": "2.2.1"
+    },
+    "doctrine/orm": {
+        "version": "v2.7.0"
+    },
+    "doctrine/persistence": {
+        "version": "1.3.6"
+    },
+    "doctrine/reflection": {
+        "version": "v1.1.0"
+    },
+    "fzaninotto/faker": {
+        "version": "v1.9.1"
+    },
+    "jdorn/sql-formatter": {
+        "version": "v1.2.17"
+    },
+    "laminas/laminas-code": {
+        "version": "3.4.1"
+    },
+    "laminas/laminas-eventmanager": {
+        "version": "3.2.1"
+    },
+    "laminas/laminas-zendframework-bridge": {
+        "version": "1.0.1"
+    },
+    "ocramius/package-versions": {
+        "version": "1.5.1"
+    },
+    "ocramius/proxy-manager": {
+        "version": "2.7.0"
+    },
     "php": {
         "version": "7.4"
     },
@@ -19,6 +134,9 @@
     },
     "psr/log": {
         "version": "1.1.2"
+    },
+    "ramsey/uuid": {
+        "version": "3.9.2"
     },
     "squizlabs/php_codesniffer": {
         "version": "3.0",
@@ -55,6 +173,9 @@
         ]
     },
     "symfony/dependency-injection": {
+        "version": "v5.0.4"
+    },
+    "symfony/doctrine-bridge": {
         "version": "v5.0.4"
     },
     "symfony/dotenv": {
@@ -113,8 +234,23 @@
     "symfony/http-kernel": {
         "version": "v5.0.4"
     },
+    "symfony/messenger": {
+        "version": "4.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.3",
+            "ref": "8a2675c061737658bed85102e9241c752620e575"
+        },
+        "files": [
+            "config/packages/messenger.yaml"
+        ]
+    },
     "symfony/mime": {
         "version": "v5.0.4"
+    },
+    "symfony/orm-pack": {
+        "version": "v1.0.8"
     },
     "symfony/phpunit-bridge": {
         "version": "4.3",
@@ -158,6 +294,9 @@
     "symfony/service-contracts": {
         "version": "v2.0.1"
     },
+    "symfony/stopwatch": {
+        "version": "v5.0.4"
+    },
     "symfony/var-dumper": {
         "version": "v5.0.4"
     },
@@ -166,5 +305,8 @@
     },
     "symfony/yaml": {
         "version": "v5.0.4"
+    },
+    "webimpress/safe-writer": {
+        "version": "2.0.0"
     }
 }

@@ -1,21 +1,67 @@
-Let's say, in our system we have two models "client" and "shipping address". Let's assume that we already have some existing (registered) clients in our storage. Let's do this simple and assume that our clients have only three properties ID, firstname and lastname.
+### Фикстуры
 
-Client can have several different shipping addresses, but max number is 3. One of them is a default address, so when client adds the first address, it becomes default. Client can change a default address any time.
+Для работы с приложением запустите выгрузку фикстур командой
 
-Client can add a new address, modify an existing address or remove an existing address. Client can not remove a default address, thus there should be at least one address (default) if it was added earlier.
+```
+php bin/console doctrine:fixtures:load
+```
 
-Shipping address includes country, city, zipcode, street.
+### Команды бизнес логики
 
-Implement a console application to be able to add, update, delete and get shipping addresses for a specific client.
+Получить список клиентов
+```
+bin/console client:list
+```
 
-Requirements: 
-- 	Use PHP 7.*
-- 	Use DDD ([Domain-Driven Design](https://www.amazon.com/exec/obidos/ASIN/0321125215/domainlanguag-20 "Domain-Driven Design"), [Domain-Driven Design in PHP](https://leanpub.com/ddd-in-php "Domain-Driven Design in PHP"))
-- 	Use any storage you want for storing data, e.g. JSON files. ACID is not important here.
-- 	Cover an application service layer by unit tests. If you need use e.g. PHPUnit. There is no need to cover all methods, just a couple to show the principle.
-- Use plain PHP (no frameworks).
+Получить информацию о клиенте и его адресах доставки
+```
+php bin/console client:get [uuid]
+```
 
-Fork your own copy of eglobal-it/f4u-test-assignment and share the result with us.
+Пример:
+```
+php bin/console client:get f30c871c-3f8a-44bf-9a3a-43268929a453
+```
+
+Команда добавления адреса доставки
+```
+php bin/console client:add-shipping-address --id=[uuid] --country=[country] --city=[city] --street=[street] --zipCode=[zipcode]
+```
+
+Пример 
+```
+php bin/console client:add-shipping-address --id=f30c871c-3f8a-44bf-9a3a-43268929a453 --country="Hungary" --city=Patriciaton --street="Norbert Gardens" --zipCode=53897
+```
+
+Команда удаления адреса доставки
+```
+php bin/console client:delete-shipping-address --id=[uuid] --country=[country] --city=[city] --street=[street] --zipCode=[zipcode]
+```
+
+Пример 
+```
+php bin/console client:delete-shipping-address --id=f30c871c-3f8a-44bf-9a3a-43268929a453 --country="Hungary" --city=Patriciaton --street="Norbert Gardens" --zipCode=53897
+```
+
+Команда обновления адреса доставки
+```
+php bin/console client:update-shipping-address --id=[uuid] --country=[old-country] --city=[old-city] --street=[old-street] --zipCode=[old-zipcode] --new-country=[new-country] --new-city=[new-city] --new-street=[new-street] --new-zipCode=[new-zipcode]
+```
+
+Пример 
+```
+php bin/console client:update-shipping-address --id=cb4666dd-ab44-492d-a9c1-27b17d7310c4 --country="Qatar" --city="McCulloughhaven" --street="Olaf Passage" --zipCode=76312 --new-country=Qatar2 --new-city=McCulloughhaven2 --new-street="Olaf Passage 2" --new-zipCode=76313
+```
+
+Команда смены адреса доставки по умолчанию
+```
+php bin/console client:set-default-shipping-address --id=[uuid] --country=[country] --city=[city] --street=[street] --zipCode=[zipcode]
+```
+
+Пример 
+```
+php bin/console client:set-default-shipping-address --id=f30c871c-3f8a-44bf-9a3a-43268929a453 --country="Hungary" --city=Patriciaton --street="Norbert Gardens" --zipCode=53897
+```
 
 ### Тесты
 
