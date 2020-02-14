@@ -1,4 +1,4 @@
-FROM symfony-app
+FROM ddd-test-app
 
 ARG DOCKER_PROJECT_DIR
 ARG COMPOSER_VERSION
